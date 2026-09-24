@@ -1,0 +1,45 @@
+{
+  "shots": [
+    {
+      "id": "opening",
+      "kind": "title",
+      "durationInFrames": 75,
+      "eyebrow": "PRODUCT FILM",
+      "title": "See it in action.",
+      "subtitle": "Built from original product footage."
+    },
+    {
+      "id": "screenrecording",
+      "kind": "mockup",
+      "durationInFrames": 150,
+      "title": "The real interface.",
+      "caption": "Your recording stays sharp and faithful.",
+      "url": "app.example / dashboard",
+      "device": "laptop",
+      "asset": {
+        "path": "assets/screenrecordings/demo.mp4",
+        "type": "video",
+        "fit": "contain",
+        "trimBefore": 0,
+        "volume": 0
+      }
+    },
+    {
+      "id": "existing-video",
+      "kind": "media",
+      "durationInFrames": 90,
+      "asset": {
+        "path": "assets/video/clip.mp4",
+        "type": "video",
+        "fit": "cover"
+      },
+      "title": "Your footage, your story."
+    },
+    {
+      "id": "closing",
+      "kind": "outro",
+      "durationInFrames": 75,
+      "title": "Ready for the next shot."
+    }
+  ]
+}

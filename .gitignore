@@ -1,0 +1,22 @@
+node_modules/
+dist/
+build/
+output/
+.cache/
+.remotion/
+*.log
+
+.env
+.env.*
+!.env.example
+
+# Local user footage and generated media may be private or large.
+public/assets/**
+!public/assets/**/
+!public/assets/**/.gitkeep
+public/generated/**
+!public/generated/**/
+!public/generated/**/.gitkeep
+generated/**
+!generated/**/
+!generated/**/.gitkeep

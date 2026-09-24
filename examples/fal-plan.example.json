@@ -1,0 +1,17 @@
+﻿{
+  "version": 1,
+  "shots": [
+    {
+      "id": "example-atmosphere",
+      "task": "textToImage",
+      "prompt": "A quiet alpine sunrise above a sea of clouds, cinematic natural light, no text or logos",
+      "reason": "Optional atmospheric visual when no suitable existing image is available",
+      "parameters": {
+        "aspect_ratio": "16:9",
+        "resolution": "1K",
+        "num_images": 1
+      },
+      "durationInFrames": 90
+    }
+  ]
+}
