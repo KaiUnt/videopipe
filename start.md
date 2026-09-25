@@ -20,6 +20,10 @@ Die Kernarchitektur besteht zunächst ausschließlich aus:
 1. **Remotion** für programmatische Videos, Motion Graphics, Typografie, Mockups, Compositing, Editing und finales Rendering.
 2. **fal.ai** als optionale Quelle für generative Bild- und Videoinhalte.
 
+**Existing Assets First → Remotion First → Generative AI Where It Adds Value.**
+
+**Plan Together → Approve → Produce Autonomously.** Der Coding Agent ist Creative Director und technischer Orchestrator; fal.ai MCP kann ihn bei der Modellwahl unterstützen, ist aber kein Bestandteil der Produktionslaufzeit.
+
 Halte das Setup bewusst klein und modular.
 
 Keine unnötige Workflow-Engine, kein Multi-Agent-System und keine zusätzliche Orchestrierungsplattform für den MVP.
@@ -85,16 +89,25 @@ video-studio/
 │   ├── lib/
 │   │   └── fal/
 │   └── utils/
-├── assets/
-│   ├── images/
-│   ├── video/
-│   ├── screenrecordings/
-│   ├── audio/
-│   └── brand/
+├── public/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── video/
+│   │   ├── screenrecordings/
+│   │   ├── audio/
+│   │   └── brand/{logos,fonts,images,references}/
+│   └── generated/
+├── brand/
+│   ├── brand.json
+│   └── BRAND.md
 ├── generated/
 │   ├── images/
 │   └── video/
 ├── output/
+│   └── <projekt>/
+│       ├── final/
+│       ├── qa/
+│       └── work/
 ├── AGENTS.md
 ├── .env.example
 └── README.md
@@ -153,6 +166,14 @@ Insbesondere bei:
 * Infografiken
 
 soll das Originalmaterial erhalten bleiben und nicht unnötig durch ein generatives Modell neu interpretiert werden.
+
+## Brand / Corporate Identity
+
+Vorhandene Corporate-Identity-Assets und Design-Guidelines haben Vorrang vor erfundenen Farben, Fonts, Logos oder visuellen Regeln. Analysiere und verwende Logos (SVG, PNG oder andere geeignete Formate), lokale Fonts (OTF, TTF, WOFF, WOFF2), Brand-Farben, Typografie, Bildsprache, Logo-Regeln sowie Motion- und Animationsprinzipien.
+
+Lege Brand-Material unter `public/assets/brand/{logos,fonts,images,references}/` ab, damit Remotion es mit `staticFile()` laden kann. Jedes Kit hat einen eigenen Ordner: `brand/<brand>/brand.json` beschreibt maschinenlesbare Farben, Fonts und Asset-Pfade; `brand/<brand>/BRAND.md` dokumentiert qualitative Gestaltungsregeln. Vorhandene Kits liegen unter `brand/world-direct/` und `brand/a1/`. Die bestehenden Brand-Komponenten importieren ausdrücklich die World-Direct-Konfiguration. Fehlende Werte bleiben bewusst offen, bis der Nutzer Brand-Material bereitstellt.
+
+Bei Bedarf können wiederverwendbare Remotion-Komponenten wie `BrandLogo`, `BrandHeadline`, `BrandText`, `BrandBackground`, `BrandIntro` und `BrandOutro` die CI konsistent anwenden. Halte die Struktur so einfach, dass später mehrere Brands möglich sind, ohne den MVP mit einer Brand-Verwaltung zu belasten.
 
 ---
 
@@ -259,6 +280,10 @@ Keine Modell-IDs oder Parameter erfinden.
 
 Die Modellschicht soll einfach aktualisierbar bleiben.
 
+Die reproduzierbare Pipeline verwendet das SDK: **Approved Shot → fal.ai SDK → generiertes Asset → lokales Asset Management → Remotion → finales Video**. Sie funktioniert ohne Coding Agent und ohne MCP.
+
+Prüfe zusätzlich den aktuellen offiziellen fal.ai MCP Server und die Unterstützung im jeweiligen Coding-Agent-Harness. Wenn der Client Streamable HTTP und sichere Authentifizierung unterstützt, kann MCP optional für den Agenten eingerichtet werden. MCP dient bei Planung und Entwicklung der Modellsuche, Prüfung von Fähigkeiten, Eingaben und Preisen sowie dem Modellvergleich. Kleine Modelltests sind nur mit ausdrücklicher Freigabe möglicher Kosten erlaubt. MCP ist **keine Laufzeit-Abhängigkeit** und ersetzt weder das SDK noch das Approval Gate.
+
 ---
 
 # 8. fal.ai ist optional, nicht Standard
@@ -301,6 +326,15 @@ Der Agent soll diese Idee nicht ungefragt ersetzen, sondern:
 
 Der Agent soll zuerst alle vorhandenen relevanten Assets berücksichtigen.
 
+Für **jeden** Shot gilt vor einem Modellvorschlag diese Reihenfolge:
+
+1. Gibt es geeignetes Originalmaterial des Nutzers?
+2. Kann Remotion den Shot mit vorhandenen Assets deterministisch umsetzen?
+3. Hilft ein generatives Bild, statt eines Videos?
+4. Ist ein generatives Video wirklich erforderlich?
+
+Erst wenn Generierung einen konkreten Mehrwert bringt, prüft der Agent aktuelle Modellinformationen über den offiziellen fal.ai MCP Server (falls vorhanden) oder die offiziellen fal.ai-Modellseiten. Er vergleicht Modelle und begründet die Wahl, ohne Modell-ID, Parameter oder Preis zu erfinden.
+
 Danach gemeinsam mit dem Nutzer entwickeln:
 
 Briefing
@@ -321,14 +355,13 @@ Vor der eigentlichen Produktion soll eine klare Shot List entstehen.
 
 Beispiel:
 
-| Shot | Inhalt               | Quelle             | Umsetzung            |
-| ---- | -------------------- | ------------------ | -------------------- |
-| 1    | Hook + Logo          | Brand Assets       | Remotion             |
-| 2    | Produktdemo          | Screenrecording 01 | Remotion Mockup      |
-| 3    | Feature-Zoom         | Screenrecording 02 | Remotion             |
-| 4    | atmosphärische Szene | neu                | fal.ai vorgeschlagen |
-| 5    | Produktvorteil       | UI + Text          | Remotion             |
-| 6    | Outro                | Logo + Claim       | Remotion             |
+| Shot | Inhalt               | Material           | Umsetzung            | Modell (falls nötig)      | Begründung                   |
+| ---- | -------------------- | ------------------ | -------------------- | ------------------------- | ---------------------------- |
+| 01   | Hook + Logo          | Brand Assets       | Remotion             | –                         | CI-konformes Intro           |
+| 02   | Produktdemo          | Screenrecording 01 | Remotion Mockup      | –                         | Original-UI erhalten         |
+| 03   | Produktfoto          | Foto des Nutzers   | Image-to-Video       | aktuelles geeignetes Modell | natürliche Bewegung         |
+| 04   | atmosphärische Szene | keines             | generatives Video    | aktuelles geeignetes Modell | neue Szene erforderlich      |
+| 05   | Outro                | Logo + Claim       | Remotion             | –                         | CI-konformes Outro           |
 
 Für fal.ai-Shots soll zusätzlich ersichtlich sein:
 
@@ -358,6 +391,8 @@ Der Agent erstellt zunächst:
 Diese werden gemeinsam mit dem Nutzer abgestimmt.
 
 Erst nach Zustimmung des Nutzers sollen kostenpflichtige fal.ai-Generierungen durchgeführt werden.
+
+Das gilt auch für kostenpflichtige Tests über MCP: Modellrecherche und Preisabfragen allein sind keine Freigabe für `run_model` oder `submit_job`.
 
 Dadurch können kreative Änderungen vorgenommen werden, bevor API-Kosten entstehen.
 
@@ -567,6 +602,9 @@ Das initiale Setup ist abgeschlossen, wenn:
 * ein Approval Gate vor kostenpflichtigen Generierungen besteht
 * zentrale agent-agnostische Projektanweisungen vorhanden sind
 * unterschiedliche Coding Agents sinnvoll mit dem Repository arbeiten können
+* vorhandene Brand Assets und Guidelines über `brand/` und `public/assets/brand/` nutzbar sind, ohne CI-Werte zu erfinden
+* die Modellentscheidung pro Shot bestehendes Material, Remotion, generatives Bild und generatives Video in dieser Reihenfolge abwägt
+* optionales fal MCP von der produktiven SDK-Pipeline getrennt bleibt
 * ein End-to-End-Test erfolgreich durchgeführt wurde
 * ein finales MP4 erzeugt wurde
 * README Installation, Architektur und grundlegende Verwendung dokumentiert

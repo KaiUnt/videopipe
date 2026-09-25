@@ -5,6 +5,8 @@ output/
 .cache/
 .remotion/
 *.log
+.DS_Store
+/World Direct/
 
 .env
 .env.*

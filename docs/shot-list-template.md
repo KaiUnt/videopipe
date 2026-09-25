@@ -8,7 +8,7 @@ Kopiere diese Vorlage für ein konkretes Video. Trage vorhandene Ideen und Datei
 - Zielgruppe und Ausspielkanal:
 - Idee oder Skript des Nutzers:
 - Format, Auflösung, Bildrate und ungefähre Länge:
-- Tonalität, Look, Markenregeln und Referenzen:
+- Tonalität, Look, Brand-Konfiguration (`brand/<brand>/brand.json`, `brand/<brand>/BRAND.md`) und Referenzen:
 - Vorhandene Bilder, Videos, Screenrecordings, Audio und Logos (mit Pfaden):
 - Offene kreative Entscheidungen:
 
@@ -22,10 +22,12 @@ Sprechertext, Texteinblendungen und Musikhinweise:
 
 ## Shot List
 
-| Shot | Zeit / Länge | Inhalt und Zweck | Quelle / Datei | Umsetzung | Text / Audio | Offene Punkte |
-| --- | --- | --- | --- | --- | --- | --- |
-| 01 | | | | Remotion | | |
-| 02 | | | | Remotion | | |
+Prüfe pro Shot: (1) vorhandenes Nutzer-Material, (2) deterministische Umsetzung in Remotion, (3) generatives Bild, (4) erst dann generatives Video. Ein Modell erst nach dieser Entscheidung und nach Prüfung aktueller offizieller fal.ai-Informationen vorschlagen.
+
+| Shot | Zeit / Länge | Inhalt und Zweck | Material / Datei | Umsetzung | Modell (falls nötig) | Begründung | Text / Audio | Offene Punkte |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 01 | | | | Remotion | – | | | |
+| 02 | | | | Remotion | – | | | |
 
 ## Vorgeschlagene generative Shots (nur falls nötig)
 
@@ -33,7 +35,7 @@ Sprechertext, Texteinblendungen und Musikhinweise:
 | --- | --- | --- | --- | --- | --- | --- |
 | | | | | | | offen |
 
-Für Preise und Modellparameter die aktuellen offiziellen fal.ai-Modellseiten prüfen. Unbekannte Kosten als „nicht verlässlich verfügbar“ kennzeichnen. Den fal-Plan lokal per Dry-Run validieren und den Hash der Nutzerfreigabe zuordnen. Erst nach ausdrücklicher Freigabe kostenpflichtig generieren.
+Für Preise und Modellparameter den offiziellen fal.ai MCP Server (falls verbunden) oder die aktuellen offiziellen fal.ai-Modellseiten prüfen. Unbekannte Kosten als „nicht verlässlich verfügbar“ kennzeichnen. Den fal-Plan lokal per Dry-Run validieren und den Hash der Nutzerfreigabe zuordnen. Erst nach ausdrücklicher Freigabe kostenpflichtig generieren, auch bei kleinen MCP-Tests.
 
 ## Review
 

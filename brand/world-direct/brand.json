@@ -1,0 +1,91 @@
+{
+  "name": "World Direct",
+  "status": "draft",
+  "source": {
+    "manual": "assets/brand/references/WD CI Manual_2025.pptx",
+    "manualDate": "2025-09-11",
+    "manualStatus": "Content Collection / Work in Progress",
+    "palette": "Vom Nutzer am 24.09.2026 bestätigtes Farbblatt im Chat; beschriftete Primär-/Sekundärfarben wie in Manual-Folie 8",
+    "notes": "brand/world-direct/BRAND.md",
+    "inventory": "brand/world-direct/assets.json",
+    "openPoints": "brand/world-direct/OPEN-POINTS.md"
+  },
+  "identity": {
+    "claim": "<we code your digital future>",
+    "hashtag": "#YourDigitalFuture"
+  },
+  "colorPolicy": {
+    "status": "source-confirmed",
+    "confirmedAt": "2026-09-24",
+    "primarySource": "User-confirmed palette sheet, labeled primary colors",
+    "neutralSource": "User-confirmed palette sheet, labeled dark gray, black, white and gray 1–4",
+    "digitalValueConvention": "Printed HEX values; conflicting RGB labels and original asset fills remain documented separately",
+    "conflicts": "brand/world-direct/COLOR-REVIEW.md",
+    "assetRecoloring": false
+  },
+  "palette": {
+    "blue1": "#003A5D",
+    "blue2": "#006EAD",
+    "blue3": "#6EA1CF",
+    "green": "#AFCA0B",
+    "ink": "#1E1F16",
+    "gray1": "#EFEDEB",
+    "gray2": "#E0DCD8",
+    "gray3": "#D1CBC7",
+    "gray4": "#C6C0BB",
+    "white": "#FFFFFF",
+    "black": "#000000"
+  },
+  "paletteGroups": {
+    "primary": ["blue1", "blue2", "blue3", "green", "ink", "black", "white"],
+    "secondary": ["gray1", "gray2", "gray3", "gray4"]
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "text": "#1E1F16",
+    "muted": "#1E1F16",
+    "accent": "#003A5D"
+  },
+  "fonts": {
+    "license": "assets/brand/fonts/OFL.txt",
+    "fallback": "Arial, sans-serif",
+    "headline": {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Light.ttf", "weight": "300", "style": "normal"},
+    "body": {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Regular.ttf", "weight": "400", "style": "normal"},
+    "emphasis": {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Bold.ttf", "weight": "700", "style": "normal"},
+    "faces": [
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-ExtraLight.ttf", "weight": "250", "style": "normal"},
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Light.ttf", "weight": "300", "style": "normal"},
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Regular.ttf", "weight": "400", "style": "normal"},
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-SemiBold.ttf", "weight": "600", "style": "normal"},
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Bold.ttf", "weight": "700", "style": "normal"},
+      {"family": "Cairo", "path": "assets/brand/fonts/Cairo-Black.ttf", "weight": "900", "style": "normal"}
+    ]
+  },
+  "logos": {
+    "primary": "assets/brand/logos/WD_Logo claim.svg",
+    "claim": "assets/brand/logos/WD_Logo claim.svg",
+    "icon": "assets/brand/logos/WD_Isotype.svg",
+    "block": "assets/brand/logos/WD_Logo_Block.svg"
+  },
+  "logoPolicy": {
+    "confirmedAt": "2026-09-24",
+    "default": "primary",
+    "preferredTreatment": "original-full-color",
+    "stylisticVariant": "icon",
+    "exceptionOnly": "block",
+    "claimAliasOf": "primary"
+  },
+  "references": {
+    "logoBuildUp": {
+      "path": "assets/video/brand/WD_Logo.mov",
+      "usage": "optional-reference",
+      "automaticUse": false,
+      "note": "Vom Nutzer als lange Intro-/Outro-Referenz geliefert; Verwendung nicht verpflichtend. Auswahl oder Kürzung im konkreten Filmplan entscheiden."
+    }
+  },
+  "images": {
+    "polygonColor": "assets/brand/images/backgrounds/Poly_BG_01.svg",
+    "polygonBlue": "assets/brand/images/backgrounds/Poly_BG_02.svg",
+    "polygonSide": "assets/brand/images/backgrounds/Poly_BG_07.svg"
+  }
+}

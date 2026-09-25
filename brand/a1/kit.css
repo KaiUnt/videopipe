@@ -1,0 +1,38 @@
+/* Local A1 subset. See BRAND.md and brand.json for sources and usage. */
+@font-face {
+  font-family: "A1 DS Serif";
+  src: url("../../public/assets/brand/fonts/a1/A1Serif-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "A1 DS Sans";
+  src: url("../../public/assets/brand/fonts/a1/A1Sans-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "A1 DS Sans";
+  src: url("../../public/assets/brand/fonts/a1/A1Sans-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+[data-brand="a1"] {
+  --a1-red: #EB140A;
+  --a1-interaction-red: #B90A05;
+  --a1-black: #000000;
+  --a1-copy: #4F4F4F;
+  --a1-border: #BCBCBC;
+  --a1-surface: #F8F8F8;
+  --a1-white: #FFFFFF;
+  --a1-surface-blue: #E2ECFF;
+  --a1-font-headline: "A1 DS Serif", Georgia, serif;
+  --a1-font-body: "A1 DS Sans", Arial, sans-serif;
+  font-synthesis: none;
+}

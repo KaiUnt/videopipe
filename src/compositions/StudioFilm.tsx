@@ -1,5 +1,6 @@
 import {AbsoluteFill, interpolate, Sequence, useCurrentFrame} from 'remotion';
 import {Soundtrack} from '../components/AssetMedia';
+import {brandColors} from '../components/Brand';
 import type {Shot, StudioVideoProps} from '../lib/shots';
 import {totalDuration} from '../lib/shots';
 import {
@@ -38,7 +39,7 @@ export const StudioFilm = ({shots, soundtrack}: StudioVideoProps) => {
   let cursor = 0;
 
   return (
-    <AbsoluteFill style={{backgroundColor: '#08192d'}}>
+    <AbsoluteFill style={{backgroundColor: brandColors.background ?? '#08192d'}}>
       {shots.map((shot) => {
         const from = cursor;
         cursor += shot.durationInFrames;
@@ -56,7 +57,7 @@ export const StudioFilm = ({shots, soundtrack}: StudioVideoProps) => {
       {soundtrack && <Soundtrack path={soundtrack.path} volume={soundtrack.volume} />}
       <AbsoluteFill
         style={{
-          backgroundColor: '#08192d',
+          backgroundColor: brandColors.background ?? '#08192d',
           opacity: curtainOpacity,
           pointerEvents: 'none',
         }}

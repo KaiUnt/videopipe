@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "brand": "World Direct",
+  "importedAt": "2026-09-24",
+  "sourceDirectory": "World Direct",
+  "pathConvention": {
+    "sourcePath": "Relativ zum Repository.",
+    "path": "Relativ zu public/; in Remotion mit staticFile(path) verwenden."
+  },
+  "notes": [
+    "Alle importierten Dateien sind byteidentische Kopien der gelieferten Quellen. Originaldateinamen bleiben erhalten.",
+    "Dieses Inventar dokumentiert gelieferte Dateien; es erfindet keine fehlenden CI-Freigaben, Schutzabstände oder Mindestgrößen.",
+    "SVG-Paletten stammen aus den Originaldateien. Insbesondere #AFCA0B in Logos und #94AC0D in Poly_BG_01 bleiben unverändert.",
+    "Die sechs Cairo-Fonts enthalten eine SIL-OFL-1.1-Lizenzreferenz. Die nachgelieferte vollständige OFL.txt wurde byteidentisch beigelegt; Copyright-Zeile und Lizenzversion stimmen mit den Font-Metadaten überein.",
+    "getBBox()-Messungen sind geometrische Asset-Messungen; sie definieren keinen CI-Schutzraum.",
+    "Betriebssystemdateien wie .DS_Store werden nicht importiert."
+  ],
+  "assets": [
+    {
+      "id": "wd-isotype",
+      "kind": "logo",
+      "sourcePath": "World Direct/Logos/WD_Isotype.svg",
+      "path": "assets/brand/logos/WD_Isotype.svg",
+      "sha256": "85fa874d0390cf26739f7c62284f39527f65ddf3cb38267a4c724dde7381299f",
+      "bytes": 233958,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          907.1,
+          370.5
+        ],
+        "viewBoxRaw": "0 0 907.1 370.5",
+        "aspectRatio": 2.448313,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#6FA1CE",
+          "#AFCA0B"
+        ],
+        "artworkBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 907.1,
+          "height": 370.5
+        },
+        "boundsMethod": "SVG getBBox() im lokalen Chromium; Werte auf vier Dezimalstellen gerundet.",
+        "canvasInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      }
+    },
+    {
+      "id": "wd-logo-claim",
+      "kind": "logo",
+      "sourcePath": "World Direct/Logos/WD_Logo claim.svg",
+      "path": "assets/brand/logos/WD_Logo claim.svg",
+      "sha256": "8e7ac86899b3ae92ab1ff0839de3389796a2b0eb4a9eba9bd9f4cc1e27438b09",
+      "bytes": 244445,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          907.1,
+          193.9
+        ],
+        "viewBoxRaw": "0 0 907.1 193.9",
+        "aspectRatio": 4.678185,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#1D1D1B",
+          "#6FA1CE",
+          "#AFCA0B"
+        ],
+        "artworkBounds": {
+          "x": 0,
+          "y": 5.3,
+          "width": 907.1,
+          "height": 183.3
+        },
+        "boundsMethod": "SVG getBBox() im lokalen Chromium; Werte auf vier Dezimalstellen gerundet.",
+        "canvasInsets": {
+          "top": 5.3,
+          "right": 0,
+          "bottom": 5.3,
+          "left": 0
+        }
+      }
+    },
+    {
+      "id": "wd-logo-block",
+      "kind": "logo",
+      "sourcePath": "World Direct/Logos/WD_Logo_Block.svg",
+      "path": "assets/brand/logos/WD_Logo_Block.svg",
+      "sha256": "b1367683d745eac5dd4fd2be0333f8ab60a73a5e28c1c805a480f2738f729980",
+      "bytes": 236937,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          907.1,
+          193.9
+        ],
+        "viewBoxRaw": "0 0 907.1 193.9",
+        "aspectRatio": 4.678185,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#1D1D1B",
+          "#6FA1CE",
+          "#AFCA0B"
+        ],
+        "artworkBounds": {
+          "x": 0,
+          "y": -0.0,
+          "width": 907.1,
+          "height": 193.9
+        },
+        "boundsMethod": "SVG getBBox() im lokalen Chromium; Werte auf vier Dezimalstellen gerundet.",
+        "canvasInsets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      }
+    },
+    {
+      "id": "cairo-black",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-Black.ttf",
+      "path": "assets/brand/fonts/Cairo-Black.ttf",
+      "sha256": "83265493ba07b71540e548d28cb019405db9087f2b6a7437cead9380a6745be5",
+      "bytes": 155840,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "Black",
+        "weight": 900,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo Black",
+          "legacySubfamily": "Regular",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-Black",
+          "fullName": "Cairo-Black",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-Black",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL",
+          "typographicFamily": "Cairo",
+          "typographicSubfamily": "Black"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        }
+      }
+    },
+    {
+      "id": "cairo-bold",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-Bold.ttf",
+      "path": "assets/brand/fonts/Cairo-Bold.ttf",
+      "sha256": "09740b09161fb32f9d6e836a210e9c7350e68713af7310158686041bb2f62acb",
+      "bytes": 154184,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "Bold",
+        "weight": 700,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo",
+          "legacySubfamily": "Bold",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-Bold",
+          "fullName": "Cairo Bold",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-Bold",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        }
+      }
+    },
+    {
+      "id": "cairo-extralight",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-ExtraLight.ttf",
+      "path": "assets/brand/fonts/Cairo-ExtraLight.ttf",
+      "sha256": "8b54b57ae62bb1763d49be9d08080e7beabe810c6b214bb9080199920d5b3388",
+      "bytes": 141972,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "ExtraLight",
+        "weight": 250,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo ExtraLight",
+          "legacySubfamily": "Regular",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-ExtraLight",
+          "fullName": "Cairo-ExtraLight",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-ExtraLight",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL",
+          "typographicFamily": "Cairo",
+          "typographicSubfamily": "ExtraLight"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        },
+        "notes": [
+          "OS/2 usWeightClass ist 250. Dateiname und typografischer Schnitt lauten ExtraLight; nicht stillschweigend als Gewicht 200 registrieren."
+        ]
+      }
+    },
+    {
+      "id": "cairo-light",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-Light.ttf",
+      "path": "assets/brand/fonts/Cairo-Light.ttf",
+      "sha256": "93c3ba8ebf17b40f0926590d30fd1b634fa3dd7274139e70948b03ad1fcc9983",
+      "bytes": 143888,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "Light",
+        "weight": 300,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo Light",
+          "legacySubfamily": "Regular",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-Light",
+          "fullName": "Cairo-Light",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-Light",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL",
+          "typographicFamily": "Cairo",
+          "typographicSubfamily": "Light"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        }
+      }
+    },
+    {
+      "id": "cairo-regular",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-Regular.ttf",
+      "path": "assets/brand/fonts/Cairo-Regular.ttf",
+      "sha256": "de1f6c5e2570570f627d7eb54faf57fb36e31734f70b8fc6ef8b82d18b1401af",
+      "bytes": 151580,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "Regular",
+        "weight": 400,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo",
+          "legacySubfamily": "Regular",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-Regular",
+          "fullName": "Cairo-Regular",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-Regular",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        }
+      }
+    },
+    {
+      "id": "cairo-semibold",
+      "kind": "font",
+      "sourcePath": "World Direct/Fonts/Cairo-SemiBold.ttf",
+      "path": "assets/brand/fonts/Cairo-SemiBold.ttf",
+      "sha256": "cab52f2ef604ca851380fbb0bb555e884748d31a0747340d837cbf631724ad1f",
+      "bytes": 162588,
+      "copiedUnmodified": true,
+      "font": {
+        "family": "Cairo",
+        "subfamily": "SemiBold",
+        "weight": 600,
+        "widthClass": 5,
+        "style": "normal",
+        "variable": false,
+        "embeddingFsType": 0,
+        "nameTable": {
+          "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+          "legacyFamily": "Cairo SemiBold",
+          "legacySubfamily": "Regular",
+          "uniqueIdentifier": "2.009;1KTF;Cairo-SemiBold",
+          "fullName": "Cairo-SemiBold",
+          "version": "Version 2.009; ttfautohint (v1.5.33-1714) -l 8 -r 50 -G 200 -x 0 -D latn -f arab -w G -W -c -X \"\"",
+          "postScriptName": "Cairo-SemiBold",
+          "manufacturer": "Kief Type Foundry",
+          "designer": "Mohamed Gaber, the designers of Titillium",
+          "vendorUrl": "http://kieftype.com/",
+          "designerUrl": "http://gaberism.net/",
+          "licenseDescription": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL",
+          "licenseUrl": "http://scripts.sil.org/OFL",
+          "typographicFamily": "Cairo",
+          "typographicSubfamily": "SemiBold"
+        },
+        "license": {
+          "identifier": "OFL-1.1",
+          "evidence": "Eingebettete name-Tabelle, IDs 13 und 14, sowie nachgelieferte OFL.txt mit übereinstimmender Copyright-Zeile und Lizenzversion.",
+          "separateLicenseFileSupplied": true,
+          "path": "assets/brand/fonts/OFL.txt"
+        }
+      }
+    },
+    {
+      "id": "poly-bg-01",
+      "kind": "background",
+      "sourcePath": "World Direct/Backgrounds/Poly_BG_01.svg",
+      "path": "assets/brand/images/backgrounds/Poly_BG_01.svg",
+      "sha256": "46e9ec06f4e50d4174110fbf4883865a757616a0e24e61cdeede135a674256a8",
+      "bytes": 1550,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          963.8,
+          538.6
+        ],
+        "viewBoxRaw": "0 0 963.8 538.6",
+        "aspectRatio": 1.789454,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#6FA1CE",
+          "#94AC0D",
+          "#D1CCC8",
+          "#E0DCD8",
+          "#EFEDEC",
+          "#FFFFFF"
+        ]
+      }
+    },
+    {
+      "id": "poly-bg-02",
+      "kind": "background",
+      "sourcePath": "World Direct/Backgrounds/Poly_BG_02.svg",
+      "path": "assets/brand/images/backgrounds/Poly_BG_02.svg",
+      "sha256": "4d478a0b250212d9f30cfafaadf8cce1f3d6db84b73f04d24aa36a20d8047eef",
+      "bytes": 1374,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          963.8,
+          538.6
+        ],
+        "viewBoxRaw": "0 0 963.8 538.6",
+        "aspectRatio": 1.789454,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#6FA1CE"
+        ]
+      }
+    },
+    {
+      "id": "poly-bg-07",
+      "kind": "background",
+      "sourcePath": "World Direct/Backgrounds/Poly_BG_07.svg",
+      "path": "assets/brand/images/backgrounds/Poly_BG_07.svg",
+      "sha256": "7e8d040b48f31987385d9fedb44b373d4d14207dc16a51ad2b366048dbd82ee7",
+      "bytes": 948,
+      "copiedUnmodified": true,
+      "svg": {
+        "viewBox": [
+          0.0,
+          0.0,
+          963.8,
+          538.6
+        ],
+        "viewBoxRaw": "0 0 963.8 538.6",
+        "aspectRatio": 1.789454,
+        "palette": [
+          "#003A5D",
+          "#006FAD",
+          "#6FA1CE",
+          "#E0DCD8",
+          "#EFEDEC",
+          "#FFFFFF"
+        ]
+      }
+    },
+    {
+      "id": "wd-ci-manual-2025",
+      "kind": "reference",
+      "sourcePath": "World Direct/WD CI Manual_2025.pptx",
+      "path": "assets/brand/references/WD CI Manual_2025.pptx",
+      "sha256": "7b1e5e21bbf77d9f62f47919b8522678b07f4918b0c2afbf9710b3c3a5f71daf",
+      "bytes": 48846594,
+      "copiedUnmodified": true
+    },
+    {
+      "id": "cairo-ofl-license",
+      "kind": "license",
+      "sourcePath": "World Direct/Fonts/OFL.txt",
+      "path": "assets/brand/fonts/OFL.txt",
+      "sha256": "17b90cece30db64934b7299fd76b033a3774c8a990e78badc74c59a5be8e0727",
+      "bytes": 4458,
+      "copiedUnmodified": true,
+      "license": {
+        "identifier": "OFL-1.1",
+        "copyright": "Copyright 2009 The Cairo Project Authors (gaber@gaberism.net)",
+        "fontFamily": "Cairo",
+        "matchesEmbeddedFontMetadata": true
+      }
+    },
+    {
+      "id": "wd-logo-build-up",
+      "kind": "video",
+      "sourcePath": "World Direct/Logos/WD_Logo.mov",
+      "path": "assets/video/brand/WD_Logo.mov",
+      "sha256": "4ae81e232cc680f24dda6a86449a2798e4d57e9da436f938a2a7d34be7877be4",
+      "bytes": 208003185,
+      "copiedUnmodified": true,
+      "usage": {
+        "role": "optional-motion-reference",
+        "required": false,
+        "notes": "Vom Nutzer als Intro-/Outro-Logoaufbau geliefert; wegen der Länge ausdrücklich optional. Nicht automatisch in Kompositionen einbauen."
+      },
+      "video": {
+        "container": "QuickTime / MOV",
+        "codec": "qtrle",
+        "codecDescription": "QuickTime Animation (RLE)",
+        "width": 1920,
+        "height": 1080,
+        "pixelFormat": "argb",
+        "hasAlphaChannel": true,
+        "transparencyVerified": "Alpha-Kanal von Frame 30 bei 0,99999 s mit ffmpeg geprüft: Minimum 0, Maximum 255.",
+        "durationSeconds": 11.33322,
+        "frameRate": "1000000/33333",
+        "frameCount": 340,
+        "hasAudio": false,
+        "metadataMethod": "ffprobe -show_format -show_streams; genau ein Videostream, kein Audiostream."
+      },
+      "inspection": {
+        "contactSheetPath": "output/brand/world-direct/qa/WD_Logo-contact-sheet.png",
+        "contactSheetPathConvention": "Relativ zum Repository; QA-Artefakt, nicht browser-served.",
+        "method": "12 mit ffmpeg extrahierte Frames (0, 30, …, 330), auf neutralem Hintergrund als 4×3-Kontaktbogen angeordnet und visuell betrachtet.",
+        "approximateTiming": [
+          {
+            "seconds": "0–1",
+            "description": "Aufbau des farbigen Isotypes."
+          },
+          {
+            "seconds": "1–3",
+            "description": "Wortmarke WORLD DIRECT erscheint."
+          },
+          {
+            "seconds": "3–5",
+            "description": "Claim <we code your digital future> wird geschrieben."
+          },
+          {
+            "seconds": "5–9",
+            "description": "Vollständiges Logo mit Claim steht; Cursor wechselt in den Stichproben zwischen sichtbar und unsichtbar."
+          },
+          {
+            "seconds": "9–11",
+            "description": "Logo und Claim werden wieder abgebaut."
+          }
+        ],
+        "timingPrecision": "Ungefähre Phasen aus Stichproben im Abstand von rund einer Sekunde; keine framegenauen Schnittmarken."
+      }
+    }
+  ],
+  "aliases": [
+    {
+      "id": "poly-bg-01-duplicate",
+      "kind": "duplicate",
+      "sourcePath": "World Direct/Backgrounds/Poly_BG_01 2.svg",
+      "path": "assets/brand/images/backgrounds/Poly_BG_01.svg",
+      "aliasOf": "poly-bg-01",
+      "sha256": "46e9ec06f4e50d4174110fbf4883865a757616a0e24e61cdeede135a674256a8",
+      "bytes": 1550,
+      "copied": false,
+      "reason": "Byteidentisch mit Poly_BG_01.svg; beide Quelldateien bleiben erhalten, nur die kanonische Datei wird ausgeliefert."
+    }
+  ]
+}

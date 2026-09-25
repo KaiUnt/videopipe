@@ -1,0 +1,321 @@
+{
+  "name": "A1",
+  "status": "local-source-extraction",
+  "createdAt": "2026-09-24",
+  "scope": "Kompaktes CI-Arbeitskit aus dem lokalen Webdesign-Katalog; keine vollständige CI- oder Motion-Richtlinie.",
+  "source": {
+    "root": "/Users/Kai.Unterrainer/A1 Design",
+    "notes": "brand/a1/BRAND.md",
+    "inventory": "brand/a1/assets.json",
+    "files": [
+      {
+        "path": "design-system/foundations/colors.json",
+        "sha256": "9e56f83908ba211ca6bd2b3f18dc85803aa8bb2ec850040d2e27e118da1ee6df"
+      },
+      {
+        "path": "design-system/foundations/typography.json",
+        "sha256": "1f8f4b74832b316c84cc27cc02668021ac93c9d8ddda2d927161a074e2d254be"
+      },
+      {
+        "path": "design-system/foundations/fonts.json",
+        "sha256": "f7e36416a6b6e47f9eb639468b13785cfef7770624a6417437895fae36223b93"
+      },
+      {
+        "path": "design-system/catalog/components/a1-logo-2180-53062.json",
+        "sha256": "1ea997903f3b5f600d39db013c977e5d4bd5a8fc3c98ae6fa8f9ea6c28b4e56d"
+      }
+    ],
+    "figmaRevision": "2397133763175061359",
+    "catalogRevision": "c491eed152e621e2a77ce72c8773e0476849db4cedfd982e0c7b2fd6b3e2376b",
+    "note": "Direkte Quellenextraktion aus design-system; keine Installation oder Validierung eines Consumer-Releases."
+  },
+  "palette": {
+    "red": "#EB140A",
+    "interactionRed": "#B90A05",
+    "black": "#000000",
+    "copy": "#4F4F4F",
+    "border": "#BCBCBC",
+    "surface": "#F8F8F8",
+    "white": "#FFFFFF",
+    "surfaceBlue": "#E2ECFF"
+  },
+  "paletteEvidence": {
+    "red": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/3",
+      "nodeId": "1:22408",
+      "sourceName": "Red/200 - EB140A - A1 Main Button Red",
+      "role": "Primäre Buttons"
+    },
+    "interactionRed": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/6",
+      "nodeId": "1:22418",
+      "sourceName": "Red/500 - B90A05 - A1 Main Interaction Red",
+      "role": "Links, Icons und Fehlerhinweise"
+    },
+    "black": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/23",
+      "nodeId": "1:22486",
+      "sourceName": "Black - 000000 - A1 Black",
+      "role": "Headlines und aktive Elemente"
+    },
+    "copy": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/25",
+      "nodeId": "1:22496",
+      "sourceName": "Greyscale/400 - 4F4F4F - Minerva Grey 4",
+      "role": "Fließtext und Sublines"
+    },
+    "border": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/27",
+      "nodeId": "1:22507",
+      "sourceName": "Greyscale/200 - BCBCBC - Minerva Grey 2",
+      "role": "Trennlinien auf Weiß"
+    },
+    "surface": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/29",
+      "nodeId": "1:22527",
+      "sourceName": "Greyscale/50 - F8F8F8 - Minerva Grey 1 Light",
+      "role": "Heller Hintergrund"
+    },
+    "white": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/30",
+      "nodeId": "1:22533",
+      "sourceName": "White - FFFFFF - A1 White",
+      "role": "Basis und inverse Schrift"
+    },
+    "surfaceBlue": {
+      "path": "design-system/foundations/colors.json",
+      "pointer": "/documented_colors/10",
+      "nodeId": "1:22454",
+      "sourceName": "Blue/100 - E2ECFF A1 Background Blue (Minerva Blue 1)",
+      "role": "Optionaler blauer Hintergrund"
+    }
+  },
+  "paletteGroups": {
+    "core": [
+      "red",
+      "interactionRed",
+      "black",
+      "copy",
+      "border",
+      "surface",
+      "white"
+    ],
+    "optional": [
+      "surfaceBlue"
+    ]
+  },
+  "colorPolicy": {
+    "digitalValueConvention": "Dokumentierte HEX-Werte",
+    "mainRedConflict": {
+      "canonical": "#EB140A",
+      "nonCanonicalStyle": "#DA291C",
+      "source": {
+        "path": "design-system/foundations/colors.json",
+        "pointer": "/conflicts/0"
+      }
+    },
+    "assetRecoloring": false,
+    "note": "Originale Logo-Farben und Schattierungen bleiben unverändert."
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "text": "#000000",
+    "muted": "#4F4F4F",
+    "accent": "#EB140A"
+  },
+  "fonts": {
+    "license": "",
+    "licenseStatus": "Keine separate Lizenzdatei im übernommenen Designsystem gefunden; Nutzungsumfang zu bestätigen.",
+    "fallback": "Arial, sans-serif",
+    "headline": {
+      "family": "A1 DS Serif",
+      "sourceFamily": "A1 Serif",
+      "path": "assets/brand/fonts/a1/A1Serif-Regular.otf",
+      "weight": "400",
+      "style": "normal"
+    },
+    "body": {
+      "family": "A1 DS Sans",
+      "sourceFamily": "A1 Sans",
+      "path": "assets/brand/fonts/a1/A1Sans-Regular.otf",
+      "weight": "400",
+      "style": "normal"
+    },
+    "emphasis": {
+      "family": "A1 DS Sans",
+      "sourceFamily": "A1 Sans",
+      "path": "assets/brand/fonts/a1/A1Sans-Bold.otf",
+      "weight": "700",
+      "style": "normal"
+    },
+    "faces": [
+      {
+        "family": "A1 DS Serif",
+        "sourceFamily": "A1 Serif",
+        "path": "assets/brand/fonts/a1/A1Serif-Regular.otf",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "A1 DS Sans",
+        "sourceFamily": "A1 Sans",
+        "path": "assets/brand/fonts/a1/A1Sans-Regular.otf",
+        "weight": "400",
+        "style": "normal"
+      },
+      {
+        "family": "A1 DS Sans",
+        "sourceFamily": "A1 Sans",
+        "path": "assets/brand/fonts/a1/A1Sans-Bold.otf",
+        "weight": "700",
+        "style": "normal"
+      }
+    ]
+  },
+  "typography": {
+    "policy": "Rollen aus dokumentierter Web-Typografie. Pixelwerte sind Desktop-Referenzen; Videogrößen im jeweiligen Filmplan festlegen.",
+    "desktopReferences": [
+      {
+        "name": "Desktop / Headlines / H1",
+        "family": "A1 Serif",
+        "weight": 400,
+        "sizePx": 40,
+        "lineHeight": "52px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/0",
+          "nodeId": "1:79"
+        }
+      },
+      {
+        "name": "Desktop / Headlines / H2",
+        "family": "A1 Serif",
+        "weight": 400,
+        "sizePx": 32,
+        "lineHeight": "40px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/1",
+          "nodeId": "1:84"
+        }
+      },
+      {
+        "name": "Desktop / Headlines / H3",
+        "family": "A1 Serif",
+        "weight": 400,
+        "sizePx": 24,
+        "lineHeight": "36px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/2",
+          "nodeId": "1:89"
+        }
+      },
+      {
+        "name": "Desktop / Headlines / H7",
+        "family": "A1 Sans",
+        "weight": 700,
+        "sizePx": 12,
+        "lineHeight": "20px",
+        "letterSpacingPx": 2.4000000000000004,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/6",
+          "nodeId": "1:109"
+        }
+      },
+      {
+        "name": "Desktop / Copy / Teaser",
+        "family": "A1 Sans",
+        "weight": 400,
+        "sizePx": 22,
+        "lineHeight": "32px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/14",
+          "nodeId": "1:151"
+        }
+      },
+      {
+        "name": "Desktop / Copy / Copy L",
+        "family": "A1 Sans",
+        "weight": 400,
+        "sizePx": 16,
+        "lineHeight": "24px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/15",
+          "nodeId": "1:156"
+        }
+      },
+      {
+        "name": "Desktop / Copy / Copy L - Bold",
+        "family": "A1 Sans",
+        "weight": 700,
+        "sizePx": 16,
+        "lineHeight": "24px",
+        "letterSpacingPx": 0,
+        "source": {
+          "path": "design-system/foundations/typography.json",
+          "pointer": "/documented_typography/20",
+          "nodeId": "1:182"
+        }
+      }
+    ],
+    "syntheticStyles": false
+  },
+  "logos": {
+    "primary": "assets/brand/logos/a1/a1-standard-positive.png",
+    "inverse": "assets/brand/logos/a1/a1-standard-negative.png",
+    "simplified": "assets/brand/logos/a1/a1-simplified-positive.svg",
+    "simplifiedInverse": "assets/brand/logos/a1/a1-simplified-negative.svg"
+  },
+  "logoPolicy": {
+    "default": "primary",
+    "defaultSource": {
+      "path": "design-system/catalog/components/a1-logo-2180-53062.json",
+      "pointer": "/variant_properties",
+      "values": {
+        "Color": "Positive",
+        "Style": "standard"
+      }
+    },
+    "lightBackground": "primary",
+    "darkBackground": "inverse",
+    "simplifiedUsage": "Explizite Stilalternative aus dem Katalog; keine Größen-Schwelle belegt.",
+    "preserveAspectRatio": true,
+    "recolor": false,
+    "clearSpace": null,
+    "minimumSize": null
+  },
+  "images": {},
+  "openPoints": [
+    {
+      "id": "font-license",
+      "question": "Welche Nutzungsrechte gelten für die A1-Schriften, insbesondere Video und Weitergabe?",
+      "status": "unknown"
+    },
+    {
+      "id": "logo-dimensions",
+      "question": "Gibt es verbindlichen Schutzraum und Mindestgrößen für Logos?",
+      "status": "unknown"
+    },
+    {
+      "id": "motion",
+      "question": "Falls ein A1-Film folgt: Gibt es Motion-, Intro-/Outro- oder Claim-Vorgaben?",
+      "status": "not-supplied"
+    }
+  ]
+}

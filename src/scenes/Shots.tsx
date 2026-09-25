@@ -1,5 +1,6 @@
 import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {AssetMedia} from '../components/AssetMedia';
+import {brand, brandColors, BrandBackground, BrandHeadline, BrandLogo, BrandText, hasBrandConfiguration} from '../components/Brand';
 import {
   BrowserMockup,
   DemoDashboard,
@@ -15,9 +16,9 @@ import type {
   TitleShot,
 } from '../lib/shots';
 
-const ink = '#eaf8fa';
-const muted = '#9fb8c5';
-const accent = '#54dfd8';
+const ink = brandColors.text;
+const muted = brandColors.muted;
+const accent = brandColors.accent;
 
 const rise = (frame: number, offset = 0) =>
   interpolate(frame, [offset, offset + 22], [52, 0], {
@@ -32,24 +33,19 @@ const appear = (frame: number, offset = 0) =>
   });
 
 export const ShotBackground = ({children}: {children: React.ReactNode}) => (
-  <AbsoluteFill
-    style={{
-      background: 'radial-gradient(circle at 72% 25%, #20506c 0%, #0e2944 36%, #08192d 78%)',
-      color: ink,
-      fontFamily: 'Arial, Helvetica, sans-serif',
-      overflow: 'hidden',
-    }}
-  >
-    <AbsoluteFill
-      style={{
-        backgroundImage:
-          'linear-gradient(#88c9d40d 1px, transparent 1px), linear-gradient(90deg, #88c9d40d 1px, transparent 1px)',
-        backgroundSize: '72px 72px',
-        maskImage: 'linear-gradient(90deg, transparent, black 50%, transparent)',
-      }}
-    />
+  <BrandBackground>
+    {!hasBrandConfiguration && (
+      <AbsoluteFill
+        style={{
+          backgroundImage:
+            'linear-gradient(#88c9d40d 1px, transparent 1px), linear-gradient(90deg, #88c9d40d 1px, transparent 1px)',
+          backgroundSize: '72px 72px',
+          maskImage: 'linear-gradient(90deg, transparent, black 50%, transparent)',
+        }}
+      />
+    )}
     {children}
-  </AbsoluteFill>
+  </BrandBackground>
 );
 
 const Eyebrow = ({children}: {children: React.ReactNode}) => (
@@ -75,19 +71,21 @@ export const TitleScene = ({shot}: {shot: TitleShot}) => {
 
   return (
     <ShotBackground>
-      <div
-        style={{
-          position: 'absolute',
-          width: 700,
-          height: 700,
-          right: 100,
-          top: 135,
-          borderRadius: '50%',
-          border: '2px solid #5ce4da44',
-          boxShadow: '0 0 0 75px #5ce4da0b, 0 0 0 150px #5ce4da08',
-          transform: 'rotate(-18deg) scale(' + (1 + glow / 500) + ')',
-        }}
-      />
+      {!hasBrandConfiguration && (
+        <div
+          style={{
+            position: 'absolute',
+            width: 700,
+            height: 700,
+            right: 100,
+            top: 135,
+            borderRadius: '50%',
+            border: '2px solid #5ce4da44',
+            boxShadow: '0 0 0 75px #5ce4da0b, 0 0 0 150px #5ce4da08',
+            transform: 'rotate(-18deg) scale(' + (1 + glow / 500) + ')',
+          }}
+        />
+      )}
       <div
         style={{
           position: 'absolute',
@@ -101,13 +99,21 @@ export const TitleScene = ({shot}: {shot: TitleShot}) => {
           letterSpacing: 2,
         }}
       >
-        <span style={{fontSize: 40, color: accent}}>◈</span> VIDEO STUDIO
+        {brand.logos?.primary ? (
+          <BrandLogo style={{width: 360, height: 86}} />
+        ) : brand.name ? (
+          <BrandText>{brand.name}</BrandText>
+        ) : !hasBrandConfiguration ? (
+          <><span style={{fontSize: 40, color: accent}}>◈</span> VIDEO STUDIO</>
+        ) : (
+          null
+        )}
       </div>
       <div style={{position: 'absolute', left: 112, top: 315, width: 1100}}>
         <div style={{opacity: appear(frame, 3), transform: 'translateY(' + rise(frame, 3) + 'px)'}}>
           <Eyebrow>{shot.eyebrow ?? 'NEW PROJECT'}</Eyebrow>
         </div>
-        <div
+        <BrandHeadline
           style={{
             fontSize: 124,
             fontWeight: 800,
@@ -118,9 +124,9 @@ export const TitleScene = ({shot}: {shot: TitleShot}) => {
           }}
         >
           {shot.title}
-        </div>
+        </BrandHeadline>
         {shot.subtitle && (
-          <div
+          <BrandText
             style={{
               fontSize: 35,
               lineHeight: 1.35,
@@ -132,7 +138,7 @@ export const TitleScene = ({shot}: {shot: TitleShot}) => {
             }}
           >
             {shot.subtitle}
-          </div>
+          </BrandText>
         )}
       </div>
       <div style={{position: 'absolute', left: 112, bottom: 105, width: 125, height: 7, borderRadius: 5, background: accent}} />
@@ -166,9 +172,9 @@ export const MockupScene = ({shot}: {shot: MockupShot}) => {
     <ShotBackground>
       <div style={{position: 'absolute', left: 105, top: 230, width: 500, zIndex: 2}}>
         <Eyebrow>{shot.asset ? 'REAL PRODUCT' : 'DEMO PREVIEW'}</Eyebrow>
-        <div style={{fontSize: 70, fontWeight: 800, lineHeight: 1.08, letterSpacing: -3}}>
+        <BrandHeadline style={{fontSize: 70, fontWeight: 800, lineHeight: 1.08, letterSpacing: -3}}>
           {shot.title}
-        </div>
+        </BrandHeadline>
         {shot.caption && (
           <div style={{fontSize: 29, lineHeight: 1.35, color: muted, marginTop: 30}}>
             {shot.caption}
@@ -201,21 +207,21 @@ export const MediaScene = ({shot}: {shot: MediaShot}) => {
   const frame = useCurrentFrame();
 
   return (
-    <AbsoluteFill style={{background: '#061827', fontFamily: 'Arial, Helvetica, sans-serif'}}>
+    <AbsoluteFill style={{background: brandColors.background ?? '#061827', fontFamily: brand.fonts?.body?.family ?? 'Arial, Helvetica, sans-serif'}}>
       <AbsoluteFill>
         <AssetMedia asset={shot.asset} />
       </AbsoluteFill>
       {(shot.title || shot.caption) && (
         <AbsoluteFill
           style={{
-            background: 'linear-gradient(transparent 40%, #051729cc 83%, #051729ee)',
+            background: brandColors.background ? 'linear-gradient(transparent 40%, #0009)' : 'linear-gradient(transparent 40%, #051729cc 83%, #051729ee)',
             color: ink,
             justifyContent: 'flex-end',
             padding: '0 105px 110px',
           }}
         >
           {shot.title && (
-            <div
+            <BrandHeadline
               style={{
                 fontSize: 70,
                 fontWeight: 800,
@@ -225,7 +231,7 @@ export const MediaScene = ({shot}: {shot: MediaShot}) => {
               }}
             >
               {shot.title}
-            </div>
+            </BrandHeadline>
           )}
           {shot.caption && (
             <div style={{fontSize: 30, color: '#d9e7eb', marginTop: 18, maxWidth: 1100}}>
@@ -244,9 +250,9 @@ export const FeatureScene = ({shot}: {shot: FeatureShot}) => {
     <ShotBackground>
       <div style={{position: 'absolute', left: 105, top: 160}}>
         <Eyebrow>{shot.eyebrow ?? 'THE IDEA'}</Eyebrow>
-        <div style={{fontSize: 84, fontWeight: 800, letterSpacing: -4, maxWidth: 1450}}>
+          <BrandHeadline style={{fontSize: 84, fontWeight: 800, letterSpacing: -4, maxWidth: 1450}}>
           {shot.title}
-        </div>
+          </BrandHeadline>
       </div>
       <div style={{position: 'absolute', left: 105, right: 105, top: 500, display: 'flex', gap: 28}}>
         {shot.points.map((point, i) => (
@@ -258,8 +264,8 @@ export const FeatureScene = ({shot}: {shot: FeatureShot}) => {
               boxSizing: 'border-box',
               padding: 40,
               borderRadius: 25,
-              border: '1px solid #7bdedb50',
-              background: 'linear-gradient(145deg, #2e668072, #193b5677)',
+              border: brandColors.background ? `2px solid ${accent}` : '1px solid #7bdedb50',
+              background: brandColors.background ? 'rgba(0, 0, 0, 0.2)' : 'linear-gradient(145deg, #2e668072, #193b5677)',
               boxShadow: '0 20px 50px #05182766',
               opacity: appear(frame, 7 + i * 9),
               transform: 'translateY(' + rise(frame, 7 + i * 9) + 'px)',
@@ -281,20 +287,28 @@ export const OutroScene = ({shot}: {shot: OutroShot}) => {
   const {width, height} = useVideoConfig();
   return (
     <ShotBackground>
-      <div
-        style={{
-          position: 'absolute',
-          left: width / 2 - 420,
-          top: height / 2 - 420,
-          width: 840,
-          height: 840,
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, #47d6cd28, transparent 67%)',
-        }}
-      />
-      <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-        <div style={{fontSize: 70, color: accent, marginBottom: 32, opacity: appear(frame, 2)}}>◈</div>
+      {!hasBrandConfiguration && (
         <div
+          style={{
+            position: 'absolute',
+            left: width / 2 - 420,
+            top: height / 2 - 420,
+            width: 840,
+            height: 840,
+            borderRadius: '50%',
+            background: 'radial-gradient(circle, #47d6cd28, transparent 67%)',
+          }}
+        />
+      )}
+      <div style={{position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+        {brand.logos?.primary ? (
+          <BrandLogo style={{width: 400, height: 125, marginBottom: 32, opacity: appear(frame, 2)}} />
+        ) : !hasBrandConfiguration ? (
+          <div style={{fontSize: 70, color: accent, marginBottom: 32, opacity: appear(frame, 2)}}>◈</div>
+        ) : (
+          null
+        )}
+        <BrandHeadline
           style={{
             fontSize: 104,
             fontWeight: 800,
@@ -305,11 +319,11 @@ export const OutroScene = ({shot}: {shot: OutroShot}) => {
           }}
         >
           {shot.title}
-        </div>
+        </BrandHeadline>
         {shot.subtitle && (
-          <div style={{fontSize: 31, color: muted, marginTop: 26, opacity: appear(frame, 18)}}>
+          <BrandText style={{fontSize: 31, color: muted, marginTop: 26, opacity: appear(frame, 18)}}>
             {shot.subtitle}
-          </div>
+          </BrandText>
         )}
         <div style={{width: 100, height: 7, borderRadius: 5, background: accent, marginTop: 55}} />
       </div>

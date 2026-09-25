@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A1 · Kompaktes CI-Kit</title>
+    <link rel="stylesheet" href="kit.css" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--a1-white); color: var(--a1-black); font-family: var(--a1-font-body); }
+      main { max-width: 1440px; margin: auto; padding: 42px 56px 32px; border-top: 8px solid var(--a1-red); }
+      header { display: flex; justify-content: space-between; align-items: center; gap: 48px; padding-bottom: 30px; }
+      .eyebrow { margin: 0 0 18px; color: var(--a1-interaction-red); font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+      h1 { margin: 0; font: 400 64px/1.08 var(--a1-font-headline); letter-spacing: -1px; }
+      .intro { margin: 16px 0 0; font-size: 20px; line-height: 1.5; color: var(--a1-copy); }
+      header img { width: 114px; height: 122px; object-fit: contain; flex-shrink: 0; }
+      .section-title { display: flex; align-items: baseline; gap: 14px; margin: 0 0 16px; font-size: 20px; font-weight: 700; }
+      .section-title span { color: var(--a1-interaction-red); font-size: 12px; letter-spacing: 1px; }
+      .palette { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin: 0 0 34px; }
+      .swatch { height: 70px; border: 1px solid transparent; margin-bottom: 11px; }
+      .swatch.light { border-color: var(--a1-border); }
+      .color-name { display: block; font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+      .hex { color: var(--a1-copy); font-size: 13px; }
+      .type-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; background: var(--a1-surface); padding: 28px 32px; margin-bottom: 32px; }
+      .type-label { margin: 0 0 12px; font-size: 13px; color: var(--a1-copy); }
+      .headline-sample { margin: 0; font: 400 43px/1.14 var(--a1-font-headline); }
+      .copy-sample { margin: 0 0 16px; font-size: 22px; line-height: 1.4; color: var(--a1-copy); }
+      .bold-sample { margin: 0; font-size: 18px; line-height: 1.4; font-weight: 700; }
+      .logos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+      figure { margin: 0; }
+      .logo-panel { height: 176px; display: grid; place-items: center; background: var(--a1-surface); }
+      .logo-panel.dark { background: var(--a1-black); }
+      .logo-panel img { display: block; width: 108px; height: 122px; object-fit: contain; }
+      figcaption { padding: 12px 0 0; font-size: 15px; font-weight: 700; }
+      figcaption small { display: block; margin-top: 5px; color: var(--a1-copy); font-size: 13px; font-weight: 400; }
+      footer { margin-top: 30px; border-top: 1px solid var(--a1-border); padding-top: 16px; display: flex; justify-content: space-between; gap: 24px; font-size: 13px; line-height: 1.5; color: var(--a1-copy); }
+      footer a { color: var(--a1-interaction-red); text-underline-offset: 3px; }
+      @media (max-width: 950px) {
+        main { padding: 28px; }
+        h1 { font-size: 48px; }
+        .palette { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 22px; }
+        .type-grid { grid-template-columns: 1fr; gap: 26px; }
+        .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 24px; }
+      }
+      @media (max-width: 520px) {
+        header { align-items: flex-start; gap: 16px; }
+        header img { width: 60px; height: 68px; }
+        h1 { font-size: 38px; }
+        .intro { font-size: 17px; }
+        .eyebrow { font-size: 11px; }
+        .palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .type-grid { padding: 24px; }
+        .headline-sample { font-size: 34px; }
+        footer { flex-direction: column; gap: 8px; }
+      }
+    </style>
+  </head>
+  <body data-brand="a1">
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">A1 · Brand Essentials</p>
+          <h1>Kompaktes CI-Kit.</h1>
+          <p class="intro">Farben, Schriften und Original-Logos als gemeinsame Arbeitsgrundlage.</p>
+        </div>
+        <img src="../../public/assets/brand/logos/a1/a1-standard-positive.png" alt="A1" />
+      </header>
+
+      <section aria-labelledby="colors-title">
+        <h2 class="section-title" id="colors-title"><span>01</span> Grundfarben</h2>
+        <div class="palette">
+          <div><div class="swatch" style="background: var(--a1-red)"></div><span class="color-name">Button-Rot</span><span class="hex">#EB140A</span></div>
+          <div><div class="swatch" style="background: var(--a1-interaction-red)"></div><span class="color-name">Interaktion</span><span class="hex">#B90A05</span></div>
+          <div><div class="swatch" style="background: var(--a1-black)"></div><span class="color-name">Headlines</span><span class="hex">#000000</span></div>
+          <div><div class="swatch" style="background: var(--a1-copy)"></div><span class="color-name">Fließtext</span><span class="hex">#4F4F4F</span></div>
+          <div><div class="swatch" style="background: var(--a1-border)"></div><span class="color-name">Trennlinien</span><span class="hex">#BCBCBC</span></div>
+          <div><div class="swatch light" style="background: var(--a1-surface)"></div><span class="color-name">Hintergrund</span><span class="hex">#F8F8F8</span></div>
+          <div><div class="swatch light" style="background: var(--a1-white)"></div><span class="color-name">Weiß</span><span class="hex">#FFFFFF</span></div>
+          <div><div class="swatch" style="background: var(--a1-surface-blue)"></div><span class="color-name">Blau · optional</span><span class="hex">#E2ECFF</span></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="type-title">
+        <h2 class="section-title" id="type-title"><span>02</span> Typografie</h2>
+        <div class="type-grid">
+          <div><p class="type-label">A1 Serif Regular · Headlines</p><p class="headline-sample">Raum für<br />klare Gedanken.</p></div>
+          <div><p class="type-label">A1 Sans Regular · Fließtext</p><p class="copy-sample">Eine ruhige Basis für Inhalte.<br />Präzise, lesbar und auf das Wesentliche reduziert.</p><p class="bold-sample">A1 Sans Bold setzt Akzente.</p></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="logos-title">
+        <h2 class="section-title" id="logos-title"><span>03</span> Vier Original-Varianten</h2>
+        <div class="logos">
+          <figure><div class="logo-panel"><img src="../../public/assets/brand/logos/a1/a1-standard-positive.png" alt="A1-Standardlogo positiv" /></div><figcaption>Standard · Positiv<small>PNG · auf hellem Grund</small></figcaption></figure>
+          <figure><div class="logo-panel dark"><img src="../../public/assets/brand/logos/a1/a1-standard-negative.png" alt="A1-Standardlogo negativ" /></div><figcaption>Standard · Negativ<small>PNG · auf dunklem Grund</small></figcaption></figure>
+          <figure><div class="logo-panel"><img src="../../public/assets/brand/logos/a1/a1-simplified-positive.svg" alt="A1-Logo vereinfacht positiv" /></div><figcaption>Simplified · Positiv<small>SVG · auf hellem Grund</small></figcaption></figure>
+          <figure><div class="logo-panel dark"><img src="../../public/assets/brand/logos/a1/a1-simplified-negative.svg" alt="A1-Logo vereinfacht negativ" /></div><figcaption>Simplified · Negativ<small>SVG · auf dunklem Grund</small></figcaption></figure>
+        </div>
+      </section>
+
+      <footer>
+        <div>Lokale Kit-Vorschau · 24.09.2026<br />Schriftproben und Layout sind Beispiele, keine CI-Vorgaben.</div>
+        <div><a href="BRAND.md">Nutzungsregeln &amp; offene Punkte</a> · <a href="brand.json">Konfiguration</a><br />Quelle: A1 Design / design-system</div>
+      </footer>
+    </main>
+  </body>
+</html>
