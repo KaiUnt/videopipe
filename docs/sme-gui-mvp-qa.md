@@ -7,8 +7,8 @@ Geprüft am 24.09.2026. Auftrag und Schnittliste: [Produktionsplan](sme-gui-mvp-
 - Composition: `SmeGuiMvp`.
 - Film: `output/sme-gui-mvp/final/sme-gui-mvp-16x9.mp4`.
 - Beispielbild: `output/sme-gui-mvp/final/sme-gui-mvp-16x9.png`.
-- 1920 × 1080, 16:9, 30 fps, 1562 Videoframes / 52,066667 s; H.264, yuv420p; AAC, 48 kHz, Stereo aus Monoquelle.
-- AAC-Padding ergibt eine Containerlaufzeit von etwa 52,117 s. Kein Sprecherwort wird abgeschnitten.
+- 1920 × 1080, 16:9, 30 fps, 1757 Videoframes / 58,566667 s; H.264, yuv420p; AAC, 48 kHz, Stereo aus Monoquelle.
+- AAC-Padding ergibt eine Containerlaufzeit von etwa 58,624 s. Kein Sprecherwort wird abgeschnitten.
 - Remotion Studio: `npm run studio`, Composition `SmeGuiMvp`; Render: `npm run render:sme-gui`.
 
 ## Bild und Schnitt
@@ -17,13 +17,16 @@ Quellaufnahmen über Kontaktbögen und ausgewählte Vollbilder tatsächlich ange
 
 Kontrolliert:
 
-- Start im komplexen Bereich der alten Aufnahme bei Quellsekunde 43; weitere Radio-Einstellungen ab Sekunde 48.
-- Browserrahmen / schwarze Außenränder sauber entfernt, 16:9 proportional gefüllt. Ein Randproblem des ersten Crop-Versuchs wurde vor dem MP4-Export behoben.
+- Neuer A1-Startscreen mit „SME-GUI Network Management Made Simple“ vor Beginn der Sprecheraufnahme.
+- Start der alten Aufnahme bei Quellsekunde 37 mit horizontalem Scroll nach rechts; der alte Abschnitt läuft nun kontinuierlich über Modify in die Detail-/Radio-Bereiche, ohne zweiten alten Zwischenschnitt.
+- Browserrahmen / schwarze Außenränder der alten Aufnahme wieder mit dem ursprünglichen 16:9-Ausschnitt entfernt; der Scroll zeigt die zuvor seitlich verborgenen Tabellenbereiche.
 - Vollständige neue Oberfläche und originales A1-Branding, keine erfundenen UI-Inhalte.
 - Reihenfolge passend zur Aufnahme: Lösung / Overview → WLAN → Geräte → Clients / Health → Änderungen → Abschluss auf Overview.
-- Einzelne Funktionsseiten zu den passenden gesprochenen Wörtern. Geräte knapp 1,67 s; Clients rund 7,1 s, passend zur längeren Health-Erklärung.
+- Einzelne Funktionsseiten zu den passenden gesprochenen Wörtern. Geräte rund 4,17 s inklusive Suchfeldeingabe und gefilterter Anzeige; der folgende Clients-Clip wurde vorne gekürzt und wechselt bei „including easy to read …“.
 - WLAN bei rund 1,34-facher Quellgeschwindigkeit; Bearbeitungsdialog etwa 2,7 s erkennbar, alle Bedienelemente innerhalb des Bildes.
 - Sprach- und Theme-Wechsel aus dem Ende der neuen Quellaufnahme ausgelassen.
+- Ab 50,000 s hält der Schluss-Shot als Standbild, weil sich der Screeninhalt nicht mehr sinnvoll verändert und nur der Cursor bewegt.
+- Outro entspricht dem A1-Startscreen.
 - Keine schwarzen Zwischenbilder: vollständiger FFmpeg-Decodelauf und `blackdetect` ohne Fund.
 - Ruhige lange Einstellungen auf Overview, Client-Liste und Änderungsprotokoll sind beabsichtigt. Der Freeze-Detektor erkennt diese weitgehend unveränderten UI-Zustände; keine fehlenden Quellframes festgestellt.
 
@@ -37,12 +40,12 @@ Keine Schnitte, Beschleunigung, Synthese oder inhaltliche Änderung der Stimme. 
 
 Pegelaufbereitung mit FFmpeg-Zweipass-Loudnorm; Original-MP3 unverändert. Fertiger Stereoexport: **−16,2 LUFS**, **−4,4 dBTP**, LRA 2,8 LU; keine Audio-Decodierfehler. Der vollständige PCM-Vergleich nach der letzten Pegelanpassung bestätigt alle 2.498.978 Quellsamples mit Korrelation 0,999941 bei konstantem Versatz. Endgültige Messwerte, Decodierprüfung und Korrelationsnachweise: `output/sme-gui-mvp/work/analysis/render-narration-qa.md` und `.json`.
 
-**Grenze der Audioprüfung:** lokale Transkription, Signalvergleich, Pegel- und Decodierprüfung. Keine subjektive Hörkontrolle behauptet.
+**Grenze der Audioprüfung:** lokale Transkription, Signalvergleich, Pegel- und Decodierprüfung aus der Erstfassung. Für die zweite Fassung wurde die unveränderte Sprecheraufnahme um den 2,5-s-Startscreen verschoben, aber nicht neu inhaltlich transkribiert. Keine subjektive Hörkontrolle behauptet.
 
 ## Technische Prüfung
 
 - `npm run typecheck` bestanden.
-- Neun austauschbare Shots bilden eine lückenlose Timeline ohne unbeabsichtigte Überlappung; Summe 1562 Frames.
+- Intro, sieben austauschbare Screenrecording-Shots und Outro bilden eine lückenlose Timeline ohne unbeabsichtigte Überlappung; Summe 1757 Frames.
 - Remotion-Rendering erfolgreich; Video aus fertiger MP4 vollständig decodiert.
 - Originalkopien per SHA-256 mit OneDrive-Quellen abgeglichen.
 - Vorhandene Repository-Änderungen erhalten; keine neuen Runtime-Abhängigkeiten.

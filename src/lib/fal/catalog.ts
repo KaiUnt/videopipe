@@ -24,7 +24,9 @@ export interface GenerationRecord {
   planHash: string;
   createdAt: string;
   requestId: string;
-  status: "pending" | "complete";
+  status: "pending" | "complete" | "failed";
+  // Set when fal.ai finished the request but returned an error instead of media.
+  error?: string;
   assets: GeneratedAsset[];
   reusedFrom?: string;
 }

@@ -1,6 +1,6 @@
 # A1 · Kompaktes CI-Kit
 
-Stand: 24.09.2026. Arbeitsgrundlage aus dem lokalen Projekt **A1 Design**, zugeschnitten auf einfache Layouts und spätere Videopläne. Die Auswahl basiert auf dokumentierten Foundations und Originaldateien im Katalog. Sie ersetzt kein vollständiges A1-CI-Manual.
+Stand: 24.09.2026. Arbeitsgrundlage aus einem lokalen Designsystem-Export, zugeschnitten auf einfache Layouts und spätere Videopläne. Die Auswahl basiert auf dokumentierten Foundations und Originaldateien im Katalog. Sie ersetzt kein vollständiges A1-CI-Manual.
 
 ## Inhalt und Einstieg
 
@@ -65,8 +65,8 @@ Der freigegebene 16-Sekunden-Test ist als Composition `A1Test` umgesetzt: [Film]
 
 ## Herkunft
 
-Quelle: `/Users/Kai.Unterrainer/A1 Design/design-system/`. Farben aus `foundations/colors.json`, Typografie aus `foundations/typography.json`, Font-Zuordnung aus `foundations/fonts.json`, Varianten und Default aus `catalog/components/a1-logo-2180-53062.json`. Die Bilddateien stammen aus `logos/A1_Identifier_Business/`, die Fonts aus `fonts/`.
+Das Kit wurde am 24.09.2026 aus einem lokalen Designsystem-Export zusammengestellt. Farben aus `foundations/colors.json`, Typografie aus `foundations/typography.json`, Font-Zuordnung aus `foundations/fonts.json`, Varianten und Default aus `catalog/components/a1-logo-2180-53062.json`. Die Bilddateien stammen aus `logos/A1_Identifier_Business/`, die Fonts aus `fonts/`.
 
-Quellpfade, JSON-Pointer und Dokument-Hashes stehen in `brand.json`; die Datei-Hashes in `assets.json`. Das Kit ist eine lokale Auswahl aus diesem Stand, keine Installation oder Validierung eines versionierten Consumer-Pakets. Das Quellprojekt wurde ausschließlich gelesen.
+Quellpfade, JSON-Pointer und Dokument-Hashes stehen in `brand.json`; die Datei-Hashes in `assets.json`. Relative `sourcePath`-Angaben sind historische Provenienzhinweise und keine Abhängigkeit dieses Repositories. Die für Vorschau und Film verwendeten Kopien liegen unter `public/assets/brand/`. Das Kit ist eine Auswahl aus dem erfassten Stand, keine Installation oder Validierung eines versionierten Consumer-Pakets; die Quelldaten wurden ausschließlich gelesen.
 
 Geprüft am 24.09.2026: sieben byteidentische Asset-Kopien, Konfigurations- und CSS-Verweise sowie Quellen-Hashes. Die HTML-Vorschau wurde bei 1440 und 390 px Breite in Chromium gerendert und visuell geprüft; alle drei Font-Faces und alle Logos laden lokal, ohne horizontalen Überlauf. Lokale Prüfbilder und Lade-Metadaten liegen unter `output/brand/a1/qa/`.

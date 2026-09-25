@@ -5,9 +5,9 @@
 Umsetzungsauftrag vom 24.09.2026: erste 16:9-Fassung aus den beiden gelieferten Screenrecordings und der vorhandenen Sprecheraufnahme. Das gelieferte Drehbuch gibt die Geschichte vor; seine Zeitangaben werden ausdrücklich ignoriert. Der konkrete Auftrag „mach zuerst einfach mal die 16:9 variante … wirklich nur die screenrecords verbunden mit dem narrator“ autorisiert diesen lokalen MVP-Schnitt. Die Schnittfolge wurde im Arbeitsverlauf erläutert; eine gesonderte Freigabe der exakten Framezahlen wurde nicht eingeholt.
 
 - Aussage: Netzwerkverwaltung für KMU wird durch die neue Oberfläche verständlich und selbst bedienbar.
-- Format: 1920 × 1080, 16:9, 30 fps, H.264/AAC MP4; 1562 Frames / 52,067 Sekunden.
+- Format: 1920 × 1080, 16:9, 30 fps, H.264/AAC MP4; 1757 Frames / 58,567 Sekunden.
 - Ton: vollständige englische Originalaufnahme, natürliche Geschwindigkeit, Pegel lokal angepasst.
-- Gestaltung: reale Screenrecordings, direkte Schnitte, keine ergänzenden Titel, Musik, Mockups oder generativen Assets.
+- Gestaltung: kurzer A1-Startscreen, danach reale Screenrecordings, direkte Schnitte, keine Musik, Mockups oder generativen Assets.
 - Brand: A1 ist bereits Teil der realen Oberfläche. `brand/a1/brand.json` und `brand/a1/BRAND.md` wurden gelesen; keine zusätzlichen Brand-Elemente notwendig.
 - Bildwechsel: Sprecherpausen und gesprochene Funktionsnamen. Wiedergabegeschwindigkeit ausschließlich beim stummen Screenrecording angepasst.
 
@@ -30,17 +30,18 @@ Zeiten in Sekunden, gerundet. Maßgebliche Framezahlen und austauschbare Shot-ID
 
 | Shot | Filmzeit | Zweck / Sprecher | Quelle und In–Out | Umsetzung / Begründung |
 | --- | --- | --- | --- | --- |
-| sme-01a-problem-ssid | 0,000–5,300 | Specialist knowledge | Alt 43,000–46,200 | Dichte SSID-, Funk- und Radio-Optionen; leicht verlangsamt |
-| sme-01b-problem-radio | 5,300–10,267 | Too technical and complex | Alt 48,000–53,000 | Weitere Radio-Einstellungen; Ladeunterbrechung übersprungen |
-| sme-02-solution | 10,267–16,800 | New experience for small and medium business customers | Neu 0,400–2,700 | Ruhiger Einstieg in die neue Oberfläche |
-| sme-03-overview | 16,800–22,800 | Locations and key network metrics | Neu 2,700–4,800 | Nahtlose Fortsetzung derselben Overview-Einstellung |
-| sme-04-wifi | 22,800–28,400 | View and configure Wi-Fi | Neu 6,000–13,500 | Übersicht, Standortwechsel, Bearbeitungsdialog; an Satzlänge angepasst |
-| sme-05-devices | 28,400–30,067 | Network devices | Neu 15,000–16,667 | Geladene vollständige Geräteliste, ohne Suchfilter |
-| sme-06-clients | 30,067–37,167 | Connected clients and health ratings | Neu 23,000–26,800 | Client-Liste mit sichtbaren Health-Werten; ohne verdeckenden Detaildialog |
-| sme-07-changes | 37,167–44,467 | Track every network change | Neu 33,000–38,000 | Geladenes englisches Änderungsprotokoll; vor Sprach-/Theme-Wechsel geschnitten |
-| sme-08-close | 44,467–52,067 | Less complexity … Network management made simple | Neu 0,800–4,500 | Zurück zur ruhigen Übersicht bis zum Ende des vollständigen Claims |
+| intro-a1-sme-gui | 0,000–2,500 | SME-GUI Network Management Made Simple | A1 Brandkit | Ruhiger Startscreen mit A1-Logo vor der Sprecheraufnahme |
+| sme-01a-problem-ssid | 2,500–12,767 | Specialist knowledge / too technical and complex | Alt 37,000–50,000 | Kontinuierlicher Ablauf vom horizontalen Scroll über Modify in die Detail-/Radio-Bereiche; zweite alte Szene als eigener Schnitt entfernt |
+| sme-02-solution | 12,767–19,300 | New experience for small and medium business customers | Neu 0,400–2,700 | Ruhiger Einstieg in die neue Oberfläche |
+| sme-03-overview | 19,300–25,300 | Locations and key network metrics | Neu 2,700–4,800 | Nahtlose Fortsetzung derselben Overview-Einstellung |
+| sme-04-wifi | 25,300–30,900 | View and configure Wi-Fi | Neu 6,000–13,500 | Übersicht, Standortwechsel, Bearbeitungsdialog; an Satzlänge angepasst |
+| sme-05-devices | 30,900–35,067 | Network devices | Neu 15,000–20,000 | Geräteliste läuft nochmals rund 1 s länger und zeigt die Suchfeldeingabe mit gefilterter Anzeige |
+| sme-06-clients | 35,067–41,167 | Connected clients and health ratings | Neu 24,000–26,800 | Folgender Clip vorne gekürzt; Wechsel erst bei „including easy to read …“; Client-Liste mit sichtbaren Health-Werten |
+| sme-07-changes | 41,167–48,467 | Track every network change | Neu 33,000–38,000 | Geladenes englisches Änderungsprotokoll; vor Sprach-/Theme-Wechsel geschnitten |
+| sme-08-close | 48,467–56,067 | Less complexity … Network management made simple | Neu 0,800–4,500 | Zurück zur ruhigen Übersicht; ab 50,000 s als Standbild, damit keine unnötige Cursorbewegung stört |
+| outro-a1-sme-gui | 56,067–58,567 | Abspann | A1 Brandkit | Outro identisch zum Startscreen |
 
-Alte Aufnahme: Ausschnitt 2304 × 1296 bei x70/y226 entfernt Browserrahmen und schwarzen Rand; proportional auf 1920 × 1080. Der Ausschnitt lässt die technischen Einstellungen stehen. Die bereits in der Quellaufnahme horizontal angeschnittenen linken Menütexte können durch Schnitt nicht wiederhergestellt werden. Neue Aufnahme: vollständiges 16:9-Bild, auf 1080p skaliert.
+Alte Aufnahme: Ausschnitt 2304 × 1296 bei x70/y226 entfernt Browserrahmen und schwarzen Rand; proportional auf 1920 × 1080. Der erste alte Abschnitt beginnt früher, zeigt den horizontalen Scroll nach rechts und läuft ohne zweiten alten Zwischenschnitt bis zur neuen Oberfläche. Neue Aufnahme: vollständiges 16:9-Bild, auf 1080p skaliert.
 
 ## Reproduktion
 

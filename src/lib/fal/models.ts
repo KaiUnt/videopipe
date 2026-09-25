@@ -1,13 +1,15 @@
 /**
  * Model IDs and input fields checked against the official fal.ai API pages on
- * 2026-09-24. Update this catalog when switching or adding a model.
+ * 2026-09-24 (Nano Banana 2 Edit and Kling V3 Pro on 2026-09-25). Update this
+ * catalog when switching or adding a model.
  */
 
 export type FalTask =
   | "textToVideo"
   | "imageToVideo"
   | "referenceToVideo"
-  | "textToImage";
+  | "textToImage"
+  | "imageEdit";
 
 export type FieldRule =
   | { type: "integer"; min?: number; max?: number; required?: boolean }
@@ -101,6 +103,48 @@ export const MODEL_CATALOG: Record<string, ModelDefinition> = {
       limit_generations: true,
     },
   },
+  "fal-ai/nano-banana-2/edit": {
+    task: "imageEdit",
+    docsUrl: "https://fal.ai/models/fal-ai/nano-banana-2/edit/api",
+    media: "images",
+    fields: {
+      image_urls: { type: "images", required: true, min: 1, max: 14 },
+      num_images: { type: "integer", min: 1, max: 4 },
+      seed: { type: "integer", min: 0 },
+      aspect_ratio: {
+        type: "enum",
+        values: ["auto", "21:9", "16:9", "3:2", "4:3", "5:4", "1:1", "4:5", "3:4", "2:3", "9:16", "4:1", "1:4", "8:1", "1:8"],
+      },
+      output_format: { type: "enum", values: ["jpeg", "png", "webp"] },
+      safety_tolerance: { type: "enum", values: ["1", "2", "3", "4", "5", "6"] },
+      system_prompt: { type: "string" },
+      resolution: { type: "enum", values: ["0.5K", "1K", "2K", "4K"] },
+      limit_generations: { type: "boolean" },
+      enable_web_search: { type: "boolean" },
+      thinking_level: { type: "enum", values: ["minimal", "high"] },
+    },
+    defaults: {
+      num_images: 1,
+      aspect_ratio: "auto",
+      output_format: "png",
+      resolution: "1K",
+      limit_generations: true,
+    },
+  },
+  "fal-ai/kling-video/v3/pro/image-to-video": {
+    task: "imageToVideo",
+    docsUrl: "https://fal.ai/models/fal-ai/kling-video/v3/pro/image-to-video/api",
+    media: "video",
+    fields: {
+      start_image_url: { type: "image", required: true },
+      end_image_url: { type: "image" },
+      duration: { type: "enum", values: ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"] },
+      generate_audio: { type: "boolean" },
+      negative_prompt: { type: "string" },
+    },
+    // Output aspect ratio follows the start image; no resolution parameter.
+    defaults: { duration: "5", generate_audio: false },
+  },
 };
 
 export const DEFAULT_MODEL: Record<FalTask, string> = {
@@ -108,4 +152,5 @@ export const DEFAULT_MODEL: Record<FalTask, string> = {
   imageToVideo: "fal-ai/vidu/q3/image-to-video",
   referenceToVideo: "fal-ai/vidu/q3/reference-to-video/mix",
   textToImage: "fal-ai/nano-banana-2",
+  imageEdit: "fal-ai/nano-banana-2/edit",
 };

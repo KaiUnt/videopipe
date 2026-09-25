@@ -1,16 +1,15 @@
 {
   "schemaVersion": 1,
   "brand": "A1",
-  "sourceRoot": "/Users/Kai.Unterrainer/A1 Design",
   "sourceDate": "2026-09-24",
   "importedAt": "2026-09-24",
   "provenanceStatus": "local-source-extraction",
   "pathConvention": {
-    "sourcePath": "Relativ zu sourceRoot.",
+    "sourcePath": "Ursprünglicher Pfad im bei der Erfassung verwendeten Quellexport; reine Provenienz, keine Laufzeitabhängigkeit.",
     "path": "Relativ zu public/; in Remotion mit staticFile(path) verwenden."
   },
   "notes": [
-    "Die sieben Assets sind byteidentische Kopien der angegebenen lokalen Quellen. Die Originaldateien bleiben unverändert.",
+    "Die sieben Assets sind byteidentische Kopien aus dem bei der Erfassung verwendeten Quellexport. Die tatsächlich verwendeten Kopien liegen im Repository.",
     "sourceDate ist der Tag der lokalen Sichtung, kein behauptetes Erstellungsdatum der Quelldateien.",
     "Logo-Dimensionen beschreiben die Dateigeometrie, keine CI-Mindestgröße oder einen definierten Schutzraum.",
     "Technische Verfügbarkeit der A1-Fonts dokumentiert keine neue Lizenzfreigabe. Eine separate Lizenzdatei ist diesem Kit nicht beigefügt.",

@@ -4,7 +4,6 @@
   "createdAt": "2026-09-24",
   "scope": "Kompaktes CI-Arbeitskit aus dem lokalen Webdesign-Katalog; keine vollständige CI- oder Motion-Richtlinie.",
   "source": {
-    "root": "/Users/Kai.Unterrainer/A1 Design",
     "notes": "brand/a1/BRAND.md",
     "inventory": "brand/a1/assets.json",
     "files": [
@@ -27,7 +26,7 @@
     ],
     "figmaRevision": "2397133763175061359",
     "catalogRevision": "c491eed152e621e2a77ce72c8773e0476849db4cedfd982e0c7b2fd6b3e2376b",
-    "note": "Direkte Quellenextraktion aus design-system; keine Installation oder Validierung eines Consumer-Releases."
+    "note": "Dateipfade sind relative Herkunftsangaben zum bei der Erfassung verwendeten Quellexport; sie sind keine Laufzeitabhängigkeit dieses Repositories. Es erfolgte keine Installation oder Validierung eines Consumer-Releases."
   },
   "palette": {
     "red": "#EB140A",

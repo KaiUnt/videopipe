@@ -191,20 +191,25 @@ async function findReusable(manifest: GenerationManifest, fingerprint: string, p
   return undefined;
 }
 
-const pricingCheckedAt = "2026-09-24";
+const pricingCheckedAt = "2026-09-25";
 const pricingMaxAgeMs = 7 * 24 * 60 * 60 * 1000;
 
 function estimateCostUsd(shot: PreparedShot): number | null {
   const age = Date.now() - Date.parse(pricingCheckedAt + "T00:00:00Z");
   if (age < 0 || age > pricingMaxAgeMs) return null;
-  if (shot.modelDefinition.media === "video") {
+  if (shot.model === "fal-ai/kling-video/v3/pro/image-to-video") {
+    const seconds = Number(shot.input.duration);
+    if (!Number.isFinite(seconds)) return null;
+    return Math.round(seconds * (shot.input.generate_audio === false ? 0.112 : 0.168) * 1000) / 1000;
+  }
+  if (shot.model.startsWith("fal-ai/vidu/q3/")) {
     const seconds = shot.input.duration;
     const resolution = shot.input.resolution;
     if (typeof seconds !== "number" || typeof resolution !== "string") return null;
     const rate = resolution === "360p" || resolution === "540p" ? 0.07 : 0.07 * 2.2;
     return Math.round(seconds * rate * 1000) / 1000;
   }
-  if (shot.model === "fal-ai/nano-banana-2" &&
+  if ((shot.model === "fal-ai/nano-banana-2" || shot.model === "fal-ai/nano-banana-2/edit") &&
     shot.input.limit_generations === true &&
     shot.input.enable_web_search !== true &&
     shot.input.thinking_level === undefined) {
@@ -299,7 +304,17 @@ async function generateShot(
   }
   // A pending request is resumed by ID, never submitted again.
   await fal.queue.subscribeToStatus(shot.model, { requestId: pending.requestId, mode: "polling" });
-  const result = await fal.queue.result(shot.model, { requestId: pending.requestId });
+  let result: Awaited<ReturnType<FalApi["queue"]["result"]>>;
+  try {
+    result = await fal.queue.result(shot.model, { requestId: pending.requestId });
+  } catch (error) {
+    // A finished request with an error result will never yield media; record it as
+    // failed so a later, separately approved run submits a new request.
+    const failed: GenerationRecord = { ...pending, status: "failed", error: String((error as Error)?.message ?? error) };
+    addOrReplaceRecord(manifest, failed);
+    await writeGenerationManifest(manifest, projectRoot);
+    throw new Error("fal.ai request " + pending.requestId + " for " + shot.id + " failed: " + failed.error);
+  }
   const files = resultFiles(shot, result.data);
   const assets: GeneratedAsset[] = [];
   for (let index = 0; index < files.length; index++) {

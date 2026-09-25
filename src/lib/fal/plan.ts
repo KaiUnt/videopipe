@@ -37,7 +37,7 @@ export interface PreparedPlan {
   planHash: string;
 }
 
-const tasks: FalTask[] = ["textToVideo", "imageToVideo", "referenceToVideo", "textToImage"];
+const tasks: FalTask[] = ["textToVideo", "imageToVideo", "referenceToVideo", "textToImage", "imageEdit"];
 const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif", ".heic", ".heif"]);
 
 function isObject(value: unknown): value is Record<string, unknown> {
@@ -114,7 +114,8 @@ async function imageIdentity(value: string, projectRoot: string): Promise<unknow
 
 function fallbackFrames(definition: ModelDefinition, input: Record<string, unknown>): number {
   if (definition.media === "images") return 90;
-  return (typeof input.duration === "number" ? input.duration : 5) * 30;
+  const seconds = Number(input.duration);
+  return (Number.isFinite(seconds) && seconds > 0 ? seconds : 5) * 30;
 }
 
 export async function preparePlan(raw: unknown, projectRoot = process.cwd()): Promise<PreparedPlan> {

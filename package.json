@@ -15,6 +15,9 @@
     "still:a1-test": "remotion still src/index.ts A1Test output/a1-test/final/a1-test.png --frame=225",
     "prepare:sme-gui": "node scripts/prepare-sme-gui.mjs",
     "render:sme-gui": "remotion render src/index.ts SmeGuiMvp output/sme-gui-mvp/final/sme-gui-mvp-16x9.mp4 --codec=h264 --crf=18 --audio-codec=aac --audio-bitrate=192k --pixel-format=yuv420p",
+    "render:sme-gui-v2": "remotion render src/index.ts SmeGuiMvpV2 output/sme-gui-mvp-v2/final/sme-gui-mvp-v2-16x9.mp4 --codec=h264 --crf=18 --audio-codec=aac --audio-bitrate=192k --pixel-format=yuv420p",
+    "render:sme-gui-v3": "remotion render src/index.ts SmeGuiMvpV3 output/sme-gui-mvp-v3/final/sme-gui-mvp-v3-16x9.mp4 --codec=h264 --crf=18 --audio-codec=aac --audio-bitrate=192k --pixel-format=yuv420p",
+    "render:sme-gui-story": "remotion render src/index.ts SmeGuiStory output/sme-gui-story/final/sme-gui-story-16x9.mp4 --codec=h264 --crf=18 --audio-codec=aac --audio-bitrate=192k --pixel-format=yuv420p",
     "still:sme-gui": "remotion still src/index.ts SmeGuiMvp output/sme-gui-mvp/final/sme-gui-mvp-16x9.png --frame=795",
     "typecheck": "tsc --noEmit",
     "fal": "tsx scripts/fal.ts"
